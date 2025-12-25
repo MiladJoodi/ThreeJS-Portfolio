@@ -1,0 +1,19 @@
+name: Unzip File
+
+on:
+  push:
+    paths:
+      - 'three-learn.zip'
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Unzip the file
+      run: |
+        mkdir extracted_files
+        unzip path/to/your/file.zip -d extracted_files/
